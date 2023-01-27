@@ -1,0 +1,13 @@
+---
+# tasks file for coffeesprout.fapolicyd
+
+- name: install fapolicyd
+  yum:
+     name: fapolicyd,rpm-plugin-fapolicyd,fapolicyd-selinux
+     state: present
+
+- name: enable fapolicyd
+  service:
+    name: fapolicyd
+    state: started
+    enabled: True
